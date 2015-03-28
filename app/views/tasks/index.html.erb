@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tasks</h1>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width='40'></th>
+      <th width='80%'>Name</th>
+      <th colspan="2" width='20%'>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td width='40'>
+          <a href='/tasks/<%= task.id%>/toggle'>
+          <input type='checkbox' <% if task.complete %> checked='checked'<% end %>/>
+          </a>
+        </td>
+        <td><%= task.name %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>
