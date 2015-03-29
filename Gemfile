@@ -14,6 +14,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise' # user authentication library
 
+gem 'foundation-rails' # Responsive Layout CSS Framework
+gem 'compass' # Cross-browsing css library
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
